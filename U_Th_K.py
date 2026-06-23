@@ -1,4 +1,12 @@
 # -------------------------
+# constantes (meias-vidas em anos)
+# -------------------------
+tau_U238 = 4.47e9
+tau_U235 = 7.04e8
+tau_Th232 = 1.40e10
+tau_K40  = 1.25e9
+
+# -------------------------
 # Produção de calor (W/kg of isotope)
 # -------------------------
 H_U238 = 9.46e-5
@@ -21,12 +29,3 @@ U235 = C_U * 0.0072 * np.exp(t * ln2 / tau_U235)
 Th232 = C_Th * np.exp(t * ln2 / tau_Th232)
 K40  = C_K  * np.exp(t * ln2 / tau_K40)
 
-# -------------------------
-# Produção de calor (W/kg)
-# -------------------------
-H = (
-    U238 * H_U238 +
-    U235 * H_U235 +
-    Th232 * H_Th232 +
-    K40  * H_K40
-)
